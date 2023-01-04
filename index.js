@@ -4,6 +4,7 @@ const port = 3003;
 const bodyParser = require('body-parser');
 const {User} = require('./models/User');
 const mongoose = require('mongoose');
+const dotenv = require('dotenv').config({path:'.env'});
 
 // application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({extended:true}));
@@ -11,7 +12,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 //application/json
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb+srv://tjdgh0212:tjdgh1082!@cluster0.twalcy1.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect(process.env.MONGODB_URL, {
     useNewUrlParser: true, useUnifiedTopology: true
 }).then(()=>console.log('mongodb Connected...')).catch(err =>console.log('Error :'+err));
 
