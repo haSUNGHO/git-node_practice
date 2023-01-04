@@ -9,6 +9,10 @@ const userSchema = mongoose.Schema({
         trim : true, //띄어쓰기를 자동으로 붙이기
         unique : 1 //같은 메일을 1개만 가능
     },
+    password : {
+        type : String,
+        minlength : -5,
+    },
     role : {
         type : Number,
         default : 0 //지정안할 시 0 으로 입력
@@ -18,10 +22,10 @@ const userSchema = mongoose.Schema({
         type : String,
     },
     tokenExp : {
-        type : number
+        type : Number
     }
-})
+});
 
-const user = mongoose.model('User', userSchema)
+const User = mongoose.model('User', userSchema);
 
-module.exports ={user};
+module.exports ={User};

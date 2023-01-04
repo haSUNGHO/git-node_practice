@@ -1,2 +1,1 @@
-먼저 'node install express'
-2. 'node install mogoose'
+사용되는 패키지 express, mongoose, bodyParser, nodemon
