@@ -1,1 +1,3 @@
-사용되는 패키지 express, mongoose, bodyParser, nodemon
+사용되는 패키지 express, mongoose, bodyParser, nodemon, jsonwebtoken, cookie-parser
+MONGODB 정보는 .env로 저장
+비밀번호 암호화는 bcrypt
